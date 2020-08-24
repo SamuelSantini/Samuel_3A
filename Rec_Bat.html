@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+			
+			<html lang="pt-br">
+                              <head>
+        
+		
+		
+		
+	<meta charset="UTF-8">
+        
+
+
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+                                 <title>Samuel</title>
+
+		<style>
+
+          .container{ margin: auto;margin-top: 20px;
+		  
+		  
+		  background: #363636;border-radius: 11px;width: 655px;padding: 9px;
+          }body {background: #000000;}#alerta{padding-bottom: 18px;
+          }
+
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+               <a class="navbar-brand Samuca" href="index.html">arquivo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+                  </div>
+                  </li>
+              </ul>
+            </div>
+        </nav>
+
+      <div class="container">
+        <form id="Santini">
+               <div class="form-group input-container">
+                 <label for="nome">Nome</label>
+                
+  <input type="text" class="form-control" id="nome">
+            </div>
+
+            <div class="form-group input-container">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email">
+            </div>
+			
+            <div class="form-group input-container">
+              <label for="tel">Tel</label>
+              <input type="text" class="form-control" id="telefone">
+            </div>
+            <div id="alerta"></div>
+            <button type="button" class="btn btn-outline-success" onclick="salvar()">salvar</button>
+           
+		   <button type="reset" class="btn btn-outline-success" onclick="limpar()">limpar</button>
+        </form>
+      </div>
+        <script>
+                let name = document.querySelector('input#nome')
+                            
+							let endereçoeletronico = document.querySelector('input#email')
+							let tele = document.querySelector('input#telefone')
+							let alerta = document.querySelector('div#alerta')
+
+            function salvar() {
+                if (nome.value.length == 0 || email.value.length == 0 || telefone.value.length == 0) {
+				
+				
+                    alerta.innerHTML = `<i>algo de errado n ta certo</i>`
+					
+					
+                 alerta.style.color = '#e33710'
+             
+                    if(nome.value == '') {
+             
+			 nome.style.borderColor = "#e33710"
+                    }
+					
+				if (email.value == '') {
+                        email.style.borderColor = "#e33710"
+                    }
+
+                    if (telefone.value == '') {
+                        telefone.style.borderColor = "#e33710"
+                    }
+                }
+                else {
+                    console.log(`Nome: ${nome.value}`)
+                    console.log(`E-mail: ${email.value}`);
+                    console.log(`Telefone: ${telefone.value}`)
+
+                    nome.style.borderColor = ""
+                    email.style.borderColor = ""
+                    telefone.style.borderColor = ""
+
+                    alerta.innerHTML = `<i>funcionou</i>`;
+                    alerta.style.color = '#19d13e'
+                }
+            }
+            function limpar() {
+                alerta.innerHTML = ""
+                nome.style.borderColor = ""
+                email.style.borderColor = ""
+                telefone.style.borderColor = ""
+        }  
+
+        </script>
+    </body>
+</html>
